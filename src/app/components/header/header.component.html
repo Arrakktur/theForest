@@ -1,0 +1,16 @@
+<div class="header">
+    <div class="header__wrapper">
+        <div class="header__logo">
+            The<b>Forest</b>
+        </div>
+        <div class="header__menuItems">
+            <button mat-button *ngFor="let item of menuItems" [routerLink]="item.link">{{item.text}}</button>
+        </div>
+        <div class="header__menuAuth">
+            <span class="header__login" routerLink="/profile">{{(user$ | async).name}}</span>
+            <button mat-button *ngIf="(user$ | async).token">Выход</button>
+            <button mat-button routerLink="/sign-in" *ngIf="!(user$ | async).token">Вход</button>
+            <button mat-button routerLink="/sign-up" *ngIf="!(user$ | async).token">Регистрация</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.forest__wrapper{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forest__card{
+    cursor: pointer;
+    padding: 2rem;
+    border: 1px solid silver;
+
+    &:hover{
+        background-color: #eee;
+    }
+}

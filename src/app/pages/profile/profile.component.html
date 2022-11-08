@@ -1,0 +1,30 @@
+<div class="profile">
+  <div class="profile__wrapper">
+    <div class="profile__menu menu" cdkMenu>
+      <button class="menu__item"
+              [class.active]="selectedItem === item.label"
+              *ngFor="let item of menuItems"
+              (click)="changeSelectedItem(item.label)">{{item.text}}
+      </button>
+    </div>
+    <div class="profile__content">
+      <div *ngIf="selectedItem === 'profile'">
+        <h2>Настройки профиля</h2>
+        <div class="profile__body">
+          <p>
+            Id: {{(user$ | async).id }}
+          </p>
+          <p>
+            Имя: {{(user$ | async).name }}
+          </p>
+          <p>
+            Логин: {{(user$ | async).login }}
+          </p>
+        </div>
+      </div>
+      <div *ngIf="selectedItem === 'secure'">
+        <h2>Настройки безопасности</h2>
+      </div>
+    </div>
+  </div>
+</div>

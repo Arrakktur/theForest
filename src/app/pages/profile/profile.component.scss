@@ -1,0 +1,46 @@
+.profile__wrapper{
+  margin: 5rem 20rem;
+  border: 1px solid silver;
+  display: flex;
+}
+
+.menu {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 180px;
+  max-width: 280px;
+  background-color: rgb(255, 255, 255);
+  height: max-content;
+  border-bottom: 1px solid silver;
+}
+
+.menu__item {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  &:active {
+    background-color: #ddd;
+  }
+
+  &.active{
+    background-color: #eee;
+  }
+}
+
+.profile__content{
+  border-left: 1px solid silver;
+  padding: 10px;
+}

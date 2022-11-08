@@ -1,0 +1,10 @@
+<div class="forests">
+    <div class="forest__wrapper">
+        <div class="forest__card" *ngFor="let forest of forests" routerLink="/forest-detail">
+            {{forest.name}}
+        </div>
+        <div class="forest__card">
+            + Добавить дерево
+        </div>
+    </div>
+</div>

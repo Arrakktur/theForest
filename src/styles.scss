@@ -1,4 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* vars */
+:root {
+  --width_xxl: 1400px;
+  --width_xl: 1200px;
+  --width_lg: 992px;
+  --width_md: 768px;
+  --width_sm: 576px;
+}
+
 *{
     margin: 0;
     padding: 0;

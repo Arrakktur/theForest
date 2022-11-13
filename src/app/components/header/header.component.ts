@@ -15,10 +15,15 @@ export class HeaderComponent implements OnInit {
 
   menuItems: IMenuItem[] = MENU_ITEMS;
   user$ = this.store.pipe(select(userSelector));
+  isOpen = false;
 
   constructor(private store: Store<IAppState>) {}
 
   ngOnInit() {
     this.store.dispatch(new GetUser());
+  }
+
+  changeStateMenu(){
+    this.isOpen = !this.isOpen;
   }
 }

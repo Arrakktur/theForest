@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="home">
+  <div class="home__news">
+    <div class="home__new new" *ngFor="let news of (newsList$ | async)">
+      <div class="new__title">
+        {{news.title}}
+      </div>
+      <div class="new__description">
+        {{news.description}}
+      </div>
+      <div class="new__date">
+        {{news.date}}
+      </div>
+    </div>
+  </div>
+</div>

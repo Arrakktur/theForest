@@ -1,16 +1,35 @@
 <div class="header">
-    <div class="header__wrapper">
-        <div class="header__logo">
-            The<b>Forest</b>
-        </div>
-        <div class="header__menuItems">
-            <button mat-button *ngFor="let item of menuItems" [routerLink]="item.link">{{item.text}}</button>
-        </div>
-        <div class="header__menuAuth">
-            <span class="header__login" routerLink="/profile">{{(user$ | async).name}}</span>
-            <button mat-button *ngIf="(user$ | async).token">Выход</button>
-            <button mat-button routerLink="/sign-in" *ngIf="!(user$ | async).token">Вход</button>
-            <button mat-button routerLink="/sign-up" *ngIf="!(user$ | async).token">Регистрация</button>
-        </div>
+  <div class="header__wrapper header__wrapper_desktop">
+    <div class="header__logo">
+      The<b>Forest</b>
     </div>
+    <div class="header__menuItems">
+      <button mat-button *ngFor="let item of menuItems" [routerLink]="item.link">{{item.text}}</button>
+    </div>
+    <div class="header__menuAuth">
+      <span class="header__login" routerLink="/profile">{{(user$ | async).name}}</span>
+      <button mat-button *ngIf="(user$ | async).token">Выход</button>
+      <button mat-button routerLink="/sign-in" *ngIf="!(user$ | async).token">Вход</button>
+      <button mat-button routerLink="/sign-up" *ngIf="!(user$ | async).token">Регистрация</button>
+    </div>
+  </div>
+  <div class="header__wrapper header__wrapper_mobile">
+    <div class="header__logo">
+      The<b>Forest</b>
+    </div>
+    <div>
+      <div (click)="changeStateMenu()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu icon"></mat-icon>
+      </div>
+      <div class="header__menuItemMobile" *ngIf="isOpen">
+        <div class="header__login" routerLink="/profile">{{(user$ | async).name}}</div>
+        <button mat-button *ngIf="(user$ | async).token">Выход</button>
+        <button mat-button routerLink="/sign-in" *ngIf="!(user$ | async).token">Вход</button>
+        <button mat-button routerLink="/sign-up" *ngIf="!(user$ | async).token">Регистрация</button>
+        <hr class="header__line">
+          <button mat-button *ngFor="let item of menuItems" [routerLink]="item.link"
+                  (click)="changeStateMenu()">{{item.text}}</button>
+      </div>
+    </div>
+  </div>
 </div>

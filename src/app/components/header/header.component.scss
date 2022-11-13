@@ -16,3 +16,35 @@
 .header__login{
   cursor: pointer;
 }
+
+.header__wrapper_mobile{
+  display: none;
+}
+
+.header__menuItemMobile{
+  background-color: #fff;
+  border: 1px solid silver;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  right: 0;
+  top: 47px;
+  z-index: 1;
+}
+
+.header__line{
+  width: 100px;
+}
+
+@media(max-width: 576px) {
+  .header__wrapper_desktop {
+    display: none;
+  }
+
+  .header__wrapper_mobile {
+    display: flex;
+  }
+}
+

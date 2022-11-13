@@ -26,6 +26,9 @@ import { EffectsModule } from "@ngrx/effects";
 import { UserEffects } from "./store/effects/user.effects";
 import { StoreRouterConnectingModule } from "@ngrx/router-store";
 import { ProfileComponent } from "./pages/profile/profile.component";
+import { HttpClientModule } from "@angular/common/http";
+import {CommonModule} from "@angular/common";
+import {HomeComponent} from "./pages/home/home.component";
 
 @NgModule({
   declarations: [
@@ -37,9 +40,11 @@ import { ProfileComponent } from "./pages/profile/profile.component";
     ForestsComponent,
     ForestDetailComponent,
     ProfileComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -48,6 +53,7 @@ import { ProfileComponent } from "./pages/profile/profile.component";
     CdkMenuModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     MatIconModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([UserEffects]),

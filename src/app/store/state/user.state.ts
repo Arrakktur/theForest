@@ -3,8 +3,8 @@ import { IUser } from "src/app/interfaces/user.interface";
 export interface IUserState extends IUser {}
 
 export const initialUserState: IUserState = {
-    id: null,
+    id: 1,
     name: 'test name',
-    login: null,
+    login: 'login',
     token: 'asd',
 }
